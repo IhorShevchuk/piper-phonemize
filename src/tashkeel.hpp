@@ -5,7 +5,7 @@
 #include <set>
 #include <string>
 
-#include <onnxruntime_cxx_api.h>
+#include <onnxruntime/onnxruntime_cxx_api.h>
 
 #include "shared.hpp"
 

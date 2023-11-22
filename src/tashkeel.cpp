@@ -6,7 +6,7 @@
 #include <string>
 #include <vector>
 
-#include <onnxruntime_cxx_api.h>
+#include <onnxruntime/onnxruntime_cxx_api.h>
 
 #include "tashkeel.hpp"
 #include "uni_algo.h"
