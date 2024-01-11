@@ -24,21 +24,17 @@ let package = Package(
                     .target(name: "onnxruntime"),
                 ],
                 path: "",
-                exclude:[
-                ],
                 sources:[
                     "src/phonemize.cpp",
                     "src/phoneme_ids.cpp",
                     "src/tashkeel.cpp",
                     "src/shared.cpp",
                 ],
-                publicHeadersPath:"src",
-                cSettings: [
-                ]
+                publicHeadersPath:"src"
                ),
         .binaryTarget(name: "onnxruntime",
                       url: "https://onnxruntimepackages.z14.web.core.windows.net/pod-archive-onnxruntime-c-1.16.0.zip",
                       checksum: "684f317081d6795e5fd619972bc5dd9a648156ba9d3e0fb2292314582a216d8e")
     ],
-    cxxLanguageStandard: .cxx20
+    cxxLanguageStandard: .cxx17
 )
