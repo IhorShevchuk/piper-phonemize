@@ -15,13 +15,14 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/IhorShevchuk/espeak-ng-spm",
-                 revision: "15b87671e3c7486b6a4404f997b1ae59a7eae441")
+                 revision: "15b87671e3c7486b6a4404f997b1ae59a7eae441"),
+        .package(url: "https://github.com/microsoft/onnxruntime-swift-package-manager", .upToNextMajor(from: "1.16.0"))
     ],
     targets: [
         .target(name: "piper_phonemize",
                 dependencies: [
                     .product(name: "libespeak-ng", package: "espeak-ng-spm"),
-                    .target(name: "onnxruntime"),
+                    .product(name: "onnxruntime", package: "onnxruntime-swift-package-manager"),
                 ],
                 path: "",
                 sources:[
@@ -31,10 +32,7 @@ let package = Package(
                     "src/shared.cpp",
                 ],
                 publicHeadersPath:"src"
-               ),
-        .binaryTarget(name: "onnxruntime",
-                      url: "https://onnxruntimepackages.z14.web.core.windows.net/pod-archive-onnxruntime-c-1.16.0.zip",
-                      checksum: "684f317081d6795e5fd619972bc5dd9a648156ba9d3e0fb2292314582a216d8e")
+               )
     ],
     cxxLanguageStandard: .cxx17
 )
